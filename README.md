@@ -2,7 +2,7 @@
 ## git clone  
 1. ディレクトリ以下に、laravel11-template.gitをクローンしてリポジトリ名を好きな名前に変更  
 cd ディレクトリ  
-git clone git@github.com:yuri52-star/laravel11-template.git  
+git clone git@github.com:yuriko52-star/laravel11-template.git  
 mv laravel11-template 好きな名前  
 2. 変更先(好きな名前)のリモートリポジトリをpublicで作成  
 3. ローカルリポジトリから紐付け先を変更.作成したリポジトリから url を取得して、以下のコマンドを実行  
@@ -14,7 +14,7 @@ git remote -v
 git add .  
 git commit -m "リモートリポジトリの変更"  
 git push origin main  
-エラーが発生する場合は、 sudo chmod -R 777 *  
+エラーが発生する場合は、 sudo chmod -R 777 src/*  
 
 git cloneしたらやること  
 docker-compose up -d --build  
@@ -24,4 +24,4 @@ composer install
 cp .env.example .env  
 テキストを参照
 データベースが存在しているかを確認　　
-画面表示する前にマイグレーションしておくこと
+画面表示する前にマイグレーションしておくことphp artisan key:generateも
