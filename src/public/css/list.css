@@ -1,0 +1,102 @@
+body {
+    background-color: azure;
+}
+#header {
+    background-color: #fff;
+    height: 50px;
+    
+
+}
+#header .site-title {
+    line-height: 50px;
+    padding-left: 20px;
+}
+.wrapper {
+    display: flex;
+
+}
+.left {
+    flex-basis: 400px;
+    /* height: 100vh; */
+    padding: 0 20px 50px;
+    
+    
+}
+.search-input,
+.select {
+    width: 350px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #333;
+    display: block;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+.search-btn,
+.reset-btn {
+    width: 350px;
+    height: 50px;
+    border: 1px solid #333;
+    background-color: orange;
+    margin-bottom: 40px;
+}
+.reset-btn {
+    width: 200px;
+    margin-bottom: 20px;
+    
+}
+.page-title ,
+h3{
+    margin: 20px;
+}
+.right
+{   padding: 50px 0;
+    flex-grow: 1;
+    
+    position: relative;
+    
+}
+.add-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.item-list {
+    display:flex ;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+   position: absolute;
+   left: 40px;
+    margin: 20px 0 ;
+    
+}
+a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+}
+.item {
+    width: 450px;
+    height: 400px;
+    margin-left: 30px;
+     margin-bottom: 90px;
+}
+.item img {
+    width: 450px;
+    height: 400px;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+.info {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+   
+}
+.price {
+    display: inline-block;
+
+}
