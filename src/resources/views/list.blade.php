@@ -28,7 +28,8 @@
                     <option value="">高い順に表示</option>
                     <option value="">低い順に表示</option>
                 </select>
-                <button class="reset-btn">リセット</button>
+                <!-- <button class="reset-btn">リセット</button> -->
+                
             </div>
             <div class="right">
                 <button class="add-btn">商品を追加</button>
