@@ -54,7 +54,7 @@ h3{
 .right
 {   padding: 50px 0;
     flex-grow: 1;
-    
+    padding-bottom: 30px;
     position: relative;
     
 }
@@ -102,3 +102,38 @@ a {
     display: inline-block;
 
 }
+
+/*pagination=========================================*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    position: absolute;
+    top: 550px;
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
+}
+.pagination li:not(.active) {
+    border: 1px solid #e0dfde;
+    padding: 4px 12px;
+}
+.pagination li:not(:last-child) {
+    border-right: none;
+}
+.pagination a {
+    text-decoration: none;
+}
+.pagination-link {
+    text-decoration: none;
+}
+.active {
+    padding: 4px 12px;
+    border:  1px solid #8B7969;
+    background-color: #8B7969;
+    color: #fff;
+}
+
+
+
+/*================================================*/

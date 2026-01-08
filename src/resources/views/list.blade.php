@@ -35,92 +35,30 @@
                 <button class="add-btn">商品を追加</button>
                 <div class="item-list">
                     <!-- 1 -->
+                     @foreach($products as $product)
                     <div class="item">
                         <a href="" class="">
-                        <img src="{{asset('../storage/images/muscat.png') }}" alt="" class="">
+                            <img src="{{ asset('storage/images/' .$product->image) }}" alt="">
+                        <!-- <img src="{{asset('../storage/images/muscat.png') }}" alt="" class=""> -->
                             <div class="info">
-                            <span class="name">シャインマスカット</span>
-                            <span class="price">￥1400</span>
+                            <span class="name">{{ $product->name}}</span>
+                            <span class="price">{{ '￥' . $product->price}}</span>
                         </div>   
                         </a>
                             
                         
                     </div>
-                    <!-- 2 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/strawberry.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">ストロベリー</p>
-                            <p class="price">￥1200</p>
-                        </div>
-                    </div>
-                    <!-- 3 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/peach.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">ピーチ</p>
-                            <p class="price">￥1000</p>
-                        </div>
-                    </div>
-                    <!-- 4 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/orange.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">オレンジ</p>
-                            <p class="price">￥850</p>
-                        </div>
-                    </div>
-                    <!-- 5 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/kiwi.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">キウイ</p>
-                            <p class="price">￥800</p>
-                        </div>
-                    </div>
-                    <!-- 6 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/watermelon.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">スイカ</p>
-                            <p class="price">￥700</p>
-                        </div>
-                    </div>
-                    <!-- 7 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/banana.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">バナナ</p>
-                            <p class="price">￥600</p>
-                        </div>
-                    </div>
-                    <!-- 8 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/grapes.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">ブドウ</p>
-                            <p class="price">￥1100</p>
-                        </div>
-                    </div>
-                    <!-- 9 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/melon.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">メロン</p>
-                            <p class="price">￥900</p>
-                        </div>
-                    </div>
-                    <!-- 10 -->
-                    <div class="item">
-                        <img src="{{asset('../storage/images/pineapple.png') }}" alt="" class="">
-                        <div class="info">
-                            <p class="name">パイナップル</p>
-                            <p class="price">￥800</p>
-                        </div>
-                    </div>
+                    @endforeach
+                   
                 </div>
+               <div class="pagination">
+                      {{ $products->links('vendor.pagination.default') }}
+                    
+                </div> 
             </div>
+ 
         </div>
+        
     </main>
     
 
