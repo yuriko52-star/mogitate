@@ -19,32 +19,44 @@
         <div class="wrapper">
             <div class="top-content">
                 <div class="left">
-                    <p>商品一覧 > 果物
+                    <p>商品一覧 > {{ $product->name}}
+                    </p>
+                <form action="{{ route('products.update', $product->id) }}" class="" method="post" enctype="multipart/form-data">
+                @method('PUT')
+                @csrf
                     <div    class="item-img">
-                        <img src="
-                    " alt="" class="">
+                        <img src="{{ Storage::url('images/' . $product->image) }}"alt="" class="image">
+                        {{--<img src="{{ asset('storage/images/' . $product->image) }}
+                    " alt="" class="image">--}}
                     </div>
-                    <input type="file" class="">
+                    <input type="file" name="image">
                 </div>
                 <div class="right">
                     <label for="" class="tab">商品名</label>
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="name" value="{{ $product->name }}">
                     <label for="" class="tab">値段</label>
-                    <input type="text" class="input">
+                    <input type="text" name="price" class="input" value="{{ $product->price }}" >
                     <label for="" class="radio-btn">
                         季節
                     </label>
-                    <input type="radio" class="radio-inputs">
+                    <label for="" class="seasons-label">
+                        @foreach($allSeasons as $season)
+                        <input type="checkbox" name="season_id[]" class="season-input"value="{{$season->id}}"{{ in_array($season->id, old('season_id',$product->seasons->pluck('id')->toArray())) ? 'checked' : ''}}
+                        >
+                        <span class="season-text">{{ $season->name }}</span>
+                        @endforeach
+                    </label>
                 </div>
             </div>
             <div class="upper-content">
                 <label for="" class="tab">商品説明</label>
-                <textarea name="description" id="" ></textarea>
+                <textarea name="description" id="" >{{ $product->description }}</textarea>
 
             </div>
             <div class="btns">
-                <button class="back-btn">戻る</button>
+                <a href="/products" class="back-btn">戻る</a>
                 <button class="update-btn">変更を保存</button>
+                </form>
                 <button class="delete-btn">削除</button>
             </div>
         </div>

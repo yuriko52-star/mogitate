@@ -37,7 +37,7 @@
                     <!-- 1 -->
                      @foreach($products as $product)
                     <div class="item">
-                        <a href="" class="">
+                        <a href="{{ route('products.show', ['productId' => $product->id]) }}" class="">
                             <img src="{{ asset('storage/images/' .$product->image) }}" alt="">
                         <!-- <img src="{{asset('../storage/images/muscat.png') }}" alt="" class=""> -->
                             <div class="info">
