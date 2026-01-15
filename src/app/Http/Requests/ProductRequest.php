@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class ProductRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => 'required',
+            'price' => 'required|numeric|between:0,1000',
+            'season_id' => 'required',
+            // 'season_id' => 'required|array',
+            // 'season_id.*' => 'exists:seasons,id',
+            'description' => 'required|max:120',
+            'image' => 'required|mimes:png,jpng',
+        ];
+        
+    }
+    public function messages() {
+            return [
+                'name.required' => '商品名を入力してください',
+                'price.required' => '値段を入力してください',
+                'price.numeric' => '数値で入力してください',
+                'price.between' => '0~1000円以内で入力してください',
+                'season_id.required' =>'季節を選択してください',
+                'description.required' =>'商品説明を入力してください',
+                'description.max' =>'120以内で入力してください',
+                'image.required' => '商品画像を登録してください',
+                'image.mimes' => '「png」または「jpng」形式でアップロードしてください',
+                
+            ];
+        }
+}

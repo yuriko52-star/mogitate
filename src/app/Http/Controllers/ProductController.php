@@ -5,6 +5,8 @@ use App\Models\Product;
 use App\Models\Season;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProductRequest;
+
 class ProductController extends Controller
 {
     public function index() {
@@ -20,7 +22,7 @@ class ProductController extends Controller
        
         
     }
-    public function update(Request $request ,$productId) {
+    public function update(ProductRequest $request ,$productId) {
      
         $product = Product::findOrFail($productId);
         $product->name = $request->input('name');

@@ -30,12 +30,27 @@
                     " alt="" class="image">--}}
                     </div>
                     <input type="file" name="image">
+                    <p class="error">
+                        @error('image')
+                        {{$message}}
+                        @enderror
+                    </p>
                 </div>
                 <div class="right">
                     <label for="" class="tab">商品名</label>
                     <input type="text" class="input" name="name" value="{{ $product->name }}">
+                    <p class="error">
+                        @error('name')
+                        {{$message}}
+                        @enderror
+                    </p>
                     <label for="" class="tab">値段</label>
                     <input type="text" name="price" class="input" value="{{ $product->price }}" >
+                    <p class="error">
+                        @error('price')
+                        {{$message}}
+                        @enderror
+                    </p>
                     <label for="" class="radio-btn">
                         季節
                     </label>
@@ -46,12 +61,21 @@
                         <span class="season-text">{{ $season->name }}</span>
                         @endforeach
                     </label>
+                    <p class="error">
+                        @error('season_id')
+                        {{$message}}
+                        @enderror
+                    </p>
                 </div>
             </div>
             <div class="upper-content">
                 <label for="" class="tab">商品説明</label>
                 <textarea name="description" id="" >{{ $product->description }}</textarea>
-
+                <p class="error">
+                        @error('description')
+                        {{$message}}
+                        @enderror
+                    </p>
             </div>
             <div class="btns">
                 <a href="/products" class="back-btn">戻る</a>
