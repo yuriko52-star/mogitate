@@ -41,45 +41,16 @@ class ProductController extends Controller
             $request->file('image'),
             $filename
         );
-            /*$request->file('image')->storeAs('images', $filename, 'public');
-            */
-            $product->image = $filename;
-             // ここで存在確認
-             /*if (!Storage::disk('public')->exists('images/' . $filename)) {
-            // dd('save failed');
-             }
-            // 後から削除
-        if ($product->image) {
-        Storage::disk('public')->delete('images/' . $product->image);
+           $product->image = $filename;
         }
-        $product->image = $filename;
-
-
-            // dd($request->file('image'));
-            /*if($product->image) {
-                 // 既存画像削除
-                  Storage::disk('public')->delete('images/' . $product->image);
-                }
-                  */
-               // 保存 
-            // $filename = uniqid() . '-' . $request->file('image')->getClientOriginalName();
-            // $path = $request->file('image')->storeAs('images', $filename, 'public');
-            /*dd(
-                $path,
-                file_exists(storage_path('app/public/' . $path))
-    );
-    */
-             // ★ DB 更新もここで確定
-            // $product->image = $filename;
-            // $validated['image'] = "/storage/images/$filename";
-
-        }
-        $product->save();
-        /*dd(
-    file_exists(storage_path('app/public/images/' . $filename)),
-    storage_path('app/public/images/' . $filename)
-);
-*/
+            $product->save();
+        
+            return redirect()->route('products.index');
+    }
+    public function destroy ($productId) {
+        $product = Product::findOrFail($productId);
+        $product->seasons()->detach();
+        $product->delete();
         return redirect()->route('products.index');
     }
 }

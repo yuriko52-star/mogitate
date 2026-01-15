@@ -57,6 +57,11 @@
                 <a href="/products" class="back-btn">戻る</a>
                 <button class="update-btn">変更を保存</button>
                 </form>
-                <button class="delete-btn">削除</button>
+                <form action="{{ route('products.delete', $product->id) }}" method="post" >
+                    @method('DELETE')
+                    @csrf
+                    <button class="delete-btn">削除</button>
+                </form>
+                
             </div>
         </div>

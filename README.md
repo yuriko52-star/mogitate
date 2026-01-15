@@ -24,4 +24,5 @@ composer install
 cp .env.example .env  
 テキストを参照
 データベースが存在しているかを確認　　
-画面表示する前にマイグレーションしておくことphp artisan key:generateも
+画面表示する前にマイグレーションしておくことphp artisan key:generateも  
+Docker用の.envファイルと収納する.gitignoreを用意すること（/mogitate直下に）  
