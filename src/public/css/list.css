@@ -11,14 +11,24 @@ body {
     line-height: 50px;
     padding-left: 20px;
 }
+.upper {
+    display: flex;
+    /* justify-content: space-between; */
+    
+    padding: 0 20px;
+    align-items: center;
+    height: 100px;
+    
+}
 .wrapper {
     display: flex;
+    padding: 0 20px;
 
 }
 .left {
-    flex-basis: 400px;
+    flex-basis: 350px;
     /* height: 100vh; */
-    padding: 0 0 50px 20px;
+    /* padding: 0 0 50px 20px; */
     border-bottom: 1px solid #ccc;
     
     
@@ -32,6 +42,7 @@ body {
     display: block;
     padding-left: 20px;
     margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .search-btn,
@@ -47,21 +58,25 @@ body {
     margin-bottom: 20px;
     
 }
-.page-title ,
-h3{
-    margin: 20px;
+.page-title 
+{
+    /* margin: 20px; */
+    display: inline;
+    padding-right: 30px;
+    width: 150px;
 }
 .right
-{   padding: 50px 0;
+ {   
+    /* padding: 30px 0 ; */ 
     flex-grow: 1;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     position: relative;
     
 }
 .add-btn {
-    position: absolute;
-    right: 30px;
-    top: 20px;
+    
+    display: inline-block;
+    text-align: right;
 }
 .item-list {
     display:flex ;

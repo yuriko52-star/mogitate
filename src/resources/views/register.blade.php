@@ -18,27 +18,30 @@
     <main>
         <div class="wrapper">
             <h2 class="page-title">商品登録</h2>
-                <label for="" class="tab">商品名<span>必須</span></label>
+                <label for="" class="tab">商品名<span class="require">必須</span></label>
                 <input type="text" class="input">
-                <label for="" class="tab">値段<span>必須</span></label>
+                <label for="" class="tab">値段<span class="require">必須</span></label>
                 <input type="text" class="input">
-                <label for="" class="tab">商品画像<span>必須</span></label>
+                <label for="" class="tab">商品画像<span class="require">必須</span></label>
                 <input type="file" class="img">
                 <!-- <div class="radio"> -->
                 <label for="" class="radio-btn">
-                季節<span clas="require">必須</span>
-                <p class="selectable">複数選択可</p></label>
-                <div class="radio">
-                    <input type="radio" class="radio-inputs">春
-                    <input type="radio" class="radio-inputs">夏
-                    <input type="radio" class="radio-inputs">秋
-                    <input type="radio" class="radio-inputs">冬
-                </div>
+                季節<span class="require">必須</span>
+                <span class="selectable">複数選択可</span></label>
+                <label for="" class="seasons-label">
+                    @foreach($allSeasons as $season)
+                
+                    <input type="checkbox" name="season_id[]"class="season-input" value="{{$season->id}}"{{ in_Array($season->id, old('season_id', $product->seasons->pluck('id')->toArray())) ? 'checked' : ''}}>
+                     <span class="season-text">{{ $season->name }}</span>
+                    
+                @endforeach
+                </label>
                 <!-- </div> -->
-                <label for="" class="tab">商品説明<span>必須</span></label>
+                <label for="" class="tab">商品説明<span class="require">必須</span></label>
                 <textarea name="description" id=""placeholder="" ></textarea>
                 <div class="btns">
-                    <button class="back-btn">戻る</button>
+                    <a href="/products"
+                     class="back-btn">戻る</a>
                     <button class="register-btn">登録</button>
                 </div>
             </div>

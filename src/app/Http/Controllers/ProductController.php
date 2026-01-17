@@ -55,4 +55,9 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index');
     }
+    public function add() {
+        $allSeasons = Season::all();
+        $product = new Product();
+        return view('register',compact('allSeasons', 'product'));
+    }
 }

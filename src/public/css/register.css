@@ -33,8 +33,9 @@ body {
 }
 .selectable {
     color: red;
+    
 }
-.radio-btn {
+/*.radio-btn {
     margin-bottom: 20px;
     display: flex;
 }
@@ -48,6 +49,7 @@ body {
 .radio-inputs:first-child {
     margin-left: 0;
 }
+    */
 textarea {
     width: 900px;
     border:1px solid #ccc;
@@ -76,8 +78,25 @@ textarea {
     padding: 10px 30px;
     background-color: gold;
 }
-span {
+.require {
     background-color: red;
     color: #fff;
     margin: 0 10px;
+}
+.radio-btn {
+    margin-right: 15px;
+    display: block;
+    margin-bottom: 15px;
+}
+.seasons-label {
+    /* margin-right: 20px; */
+    display: inline-block;
+    margin-bottom: 25px;
+}
+.season-text {
+     margin-right: 30px;
+    display: inline-block;
+}
+a {
+    text-decoration: none;
 }

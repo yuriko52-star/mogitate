@@ -16,10 +16,14 @@
         </h1>
     </header>
     <main>
-        <div class="wrapper">
-           
-            <div class="left">
+        
+            <div class="upper">
                 <h2 class="page-title">商品一覧</h2>
+                <a href="/products/register" class="add-btn">商品を追加</a>
+           </div>
+            <div class="wrapper">
+            <div class="left">
+                
                 <input type="text" class="search-input" placeholder="商品名で検索">
                 <button class="search-btn">検索</button>
                 <h3 class="">価格順で表示</h3>
@@ -32,7 +36,7 @@
                 
             </div>
             <div class="right">
-                <button class="add-btn">商品を追加</button>
+                
                 <div class="item-list">
                     <!-- 1 -->
                      @foreach($products as $product)
