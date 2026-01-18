@@ -1,5 +1,9 @@
+html,body {
+    height: 100%;
+}
 body {
     background-color: azure;
+    
 }
 #header {
     background-color: #fff;
@@ -13,8 +17,6 @@ body {
 }
 .upper {
     display: flex;
-    /* justify-content: space-between; */
-    
     padding: 0 20px;
     align-items: center;
     height: 100px;
@@ -23,19 +25,24 @@ body {
 .wrapper {
     display: flex;
     padding: 0 20px;
+    /* margin-bottom: 50px; */
+    min-height: 100vh;
+    
+
 
 }
 .left {
-    flex-basis: 350px;
-    /* height: 100vh; */
-    /* padding: 0 0 50px 20px; */
+    flex-basis: 450px;
+    
+    
     border-bottom: 1px solid #ccc;
+    
     
     
 }
 .search-input,
 .select {
-    width: 350px;
+    width: 400px;
     height: 50px;
     background-color: #fff;
     /* border: 0; */
@@ -47,7 +54,7 @@ body {
 
 .search-btn,
 .reset-btn {
-    width: 350px;
+    width: 400px;
     height: 50px;
     /* border: 1px solid #333; */
     background-color: orange;
@@ -67,10 +74,12 @@ body {
 }
 .right
  {   
-    /* padding: 30px 0 ; */ 
+   
     flex-grow: 1;
-    /* padding-bottom: 30px; */
-    position: relative;
+   
+    /* position: relative; */
+    /* margin-bottom: 80px; */
+   
     
 }
 .add-btn {
@@ -81,11 +90,12 @@ body {
 .item-list {
     display:flex ;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
-    justify-content: flex-start;
-   position: absolute;
-   left: 40px;
-    margin: 20px 0 ;
+    
+    justify-content: flex-end;
+   /* position: absolute; */
+  
+    margin: 20px 0 50px;
+    gap: 30px;
     
 }
 a {
@@ -95,14 +105,15 @@ a {
     color: #000;
 }
 .item {
-    width: 450px;
-    height: 400px;
-    margin-left: 30px;
-     margin-bottom: 90px;
+    width: 550px;
+    height: 500px;
+  
+     margin-bottom: 70px;
 }
 .item img {
-    width: 450px;
-    height: 400px;
+    width: 550px;
+    height: 500px;
+  
     object-fit: cover;
     vertical-align: bottom;
 }
@@ -123,11 +134,13 @@ a {
     display: flex;
     justify-content: center;
     list-style: none;
-    position: absolute;
-    top: 550px;
+    /*position: absolute;
+    
+    top: 100px;
     left: 0;
     right: 0;
-    margin-bottom: 20px;
+    */
+    margin: 20px;
 }
 .pagination li:not(.active) {
     border: 1px solid #e0dfde;

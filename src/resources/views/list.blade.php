@@ -17,11 +17,11 @@
     </header>
     <main>
         
-            <div class="upper">
+        <div class="upper">
                 <h2 class="page-title">商品一覧</h2>
                 <a href="/products/register" class="add-btn">商品を追加</a>
-           </div>
-            <div class="wrapper">
+        </div>
+        <div class="wrapper">
             <div class="left">
                 
                 <input type="text" class="search-input" placeholder="商品名で検索">

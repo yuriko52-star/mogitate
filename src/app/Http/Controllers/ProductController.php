@@ -60,4 +60,26 @@ class ProductController extends Controller
         $product = new Product();
         return view('register',compact('allSeasons', 'product'));
     }
+    public function store(Request $request) {
+        $product = new Product();
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->description = $request->input('description');
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $filename = uniqid() . '-' . $request->file('image')->getClientOriginalName();
+            Storage::disk('public')->putFileAs(
+            'images',
+            $request->file('image'),
+            $filename
+        );
+            // $request->file('image')->storeAs('images', $filename, 'public');
+            $product->image = $filename;
+        }
+        $product->save();
+
+        if($request->has('season_id')) {
+            $product->seasons()->sync($request->input('season_id',[]));
+        }
+        return redirect()->route('products.index');
+    }
 }
