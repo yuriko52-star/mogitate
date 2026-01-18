@@ -60,7 +60,7 @@ class ProductController extends Controller
         $product = new Product();
         return view('register',compact('allSeasons', 'product'));
     }
-    public function store(Request $request) {
+    public function store(ProductRequest $request) {
         $product = new Product();
         $product->name = $request->input('name');
         $product->price = $request->input('price');

@@ -33,7 +33,7 @@ body {
 }
 .left {
     flex-basis: 450px;
-    
+    margin-right: 130px;
     
     border-bottom: 1px solid #ccc;
     
@@ -91,7 +91,7 @@ body {
     display:flex ;
     flex-wrap: wrap;
     
-    justify-content: flex-end;
+    justify-content: flex-start;
    /* position: absolute; */
   
     margin: 20px 0 50px;

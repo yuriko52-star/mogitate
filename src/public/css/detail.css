@@ -5,8 +5,9 @@ body {
 #header {
     background-color: #fff;
     height: 50px;
-    
-
+}
+a {
+    text-decoration: none;
 }
 .image {
     width: 100%;
@@ -42,12 +43,14 @@ body {
     height: 50px;
     border: 1px solid #ccc;
     margin-bottom: 40px;
+    padding: 10px 20px;
 }
 textarea {
     width: 900px;
     border:1px solid #ccc;
     height: 150px;
     margin-bottom: 30px;
+    padding: 10px 20px;
 }
 .btns {
     display: flex;
