@@ -18,21 +18,40 @@
     <main>
         
         <div class="upper">
-                <h2 class="page-title">商品一覧</h2>
+                <h2 class="page-title">
+                    @if(isset($keyword) && $keyword !== '')
+                    "{{$keyword}}"の商品一覧
+                    @else
+                    商品一覧
+                    @endif
+                </h2>
                 <a href="/products/register" class="add-btn">商品を追加</a>
         </div>
         <div class="wrapper">
             <div class="left">
+                <form action="/products/search" method="get">
+                    @csrf
+                    <input type="text" name="keyword"class="search-input" placeholder="商品名で検索" value="{{ old('keyword') }}">
+                    <button class="search-btn">検索</button>
                 
-                <input type="text" class="search-input" placeholder="商品名で検索">
-                <button class="search-btn">検索</button>
+                
                 <h3 class="">価格順で表示</h3>
-                <select name="" id="" class="select">
+                <select name="sort" id="sort" class="select">
                     <option value="">価格で並び替え</option>
-                    <option value="">高い順に表示</option>
-                    <option value="">低い順に表示</option>
+                    <option value="高い順に表示">高い順に表示</option>
+                    <option value="低い順に表示">低い順に表示</option>
                 </select>
-                <!-- <button class="reset-btn">リセット</button> -->
+                </form>
+                @if(isset($sort) && $sort !== '')
+                <div class="reset-btn">
+                    <p class="searched-data">{{$sort}}</p>
+                    <div class="close-btn">
+                        <a href="/products" class="">
+                            <img src="{{ asset('images/Frame 339 (1).png') }}" alt="" class="close-icon">
+                        </a>
+                    </div>
+                </div>
+                @endif
                 
             </div>
             <div class="right">
@@ -56,7 +75,7 @@
                    
                 </div>
                <div class="pagination">
-                      {{ $products->links('vendor.pagination.default') }}
+                      {{ $products->appends(request()->query())->links('vendor.pagination.default') }}
                     
                 </div> 
             </div>

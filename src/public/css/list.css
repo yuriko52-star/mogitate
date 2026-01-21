@@ -52,25 +52,35 @@ body {
     margin-top: 20px;
 }
 
-.search-btn,
-.reset-btn {
+.search-btn
+ {
     width: 400px;
     height: 50px;
     /* border: 1px solid #333; */
     background-color: orange;
     margin-bottom: 40px;
+    
 }
 .reset-btn {
     width: 200px;
     margin-bottom: 20px;
+    display: flex;
+    color: orange;
+    border: 1px solid orange;
+    padding: 10px 0 10px 20px;
+    border-radius: 25px;
+    text-align: center;
     
+}
+.close-btn {
+    margin-left: 20px;
 }
 .page-title 
 {
-    /* margin: 20px; */
+   
     display: inline;
     padding-right: 30px;
-    width: 150px;
+    width: 400px;
 }
 .right
  {   
@@ -88,16 +98,22 @@ body {
     text-align: right;
 }
 .item-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+/*.item-list {
     display:flex ;
     flex-wrap: wrap;
     
     justify-content: flex-start;
-   /* position: absolute; */
+  
   
     margin: 20px 0 50px;
     gap: 30px;
     
 }
+    */
 a {
     display: block;
     width: 100%;
