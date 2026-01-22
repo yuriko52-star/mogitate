@@ -34,17 +34,24 @@
                     <input type="text" name="keyword"class="search-input" placeholder="商品名で検索" value="{{ old('keyword') }}">
                     <button class="search-btn">検索</button>
                 
-                
-                <h3 class="">価格順で表示</h3>
+                <div class="select-box">
+                <h3 class="tab">価格順で表示</h3>
                 <select name="sort" id="sort" class="select">
-                    <option value="">価格で並び替え</option>
-                    <option value="高い順に表示">高い順に表示</option>
-                    <option value="低い順に表示">低い順に表示</option>
+                    <option value="" >価格で並び替え</option>
+                    <option value="high"<?= $sort === 'high' ? 'selected' : ''?>>高い順に表示</option>
+                    <option value="low" <?= $sort === 'low' ? 'selected' : ''?>>低い順に表示</option>
                 </select>
+                
                 </form>
                 @if(isset($sort) && $sort !== '')
                 <div class="reset-btn">
-                    <p class="searched-data">{{$sort}}</p>
+                    <p class="searched-data">
+                        @if($sort === 'high')
+                            高い順に表示
+                        @elseif($sort === 'low')
+                            低い順に表示
+                        @endif
+                    </p>
                     <div class="close-btn">
                         <a href="/products" class="">
                             <img src="{{ asset('images/Frame 339 (1).png') }}" alt="" class="close-icon">
@@ -52,7 +59,7 @@
                     </div>
                 </div>
                 @endif
-                
+                </div>
             </div>
             <div class="right">
                 
