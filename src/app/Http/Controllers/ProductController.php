@@ -85,9 +85,9 @@ class ProductController extends Controller
     public function search(Request $request) {
         $query = Product::query();
         $sort = $request->input('sort','');
-        if($sort === '高い順に表示') {
+        if($sort === 'high') {
             $query->orderBy('price', 'desc');
-        } elseif($sort === '低い順に表示') {
+        } elseif($sort === 'low') {
             $query->orderBy('price', 'asc');
         }
 
@@ -96,10 +96,7 @@ class ProductController extends Controller
         $query->where('name', 'like', "%{$keyword}%");
        }
        $products = $query->paginate(6);
-            // $products = Product::when($keyword, function ($query) use ($keyword) {
-                // $query->where('name', 'like', "%{$keyword}%");
-                // })->paginate(6);
-        
+            
         return view('list',compact('products','keyword','sort'));
     }
 }

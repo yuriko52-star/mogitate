@@ -38,8 +38,8 @@
                 <h3 class="tab">価格順で表示</h3>
                 <select name="sort" id="sort" class="select">
                     <option value="" >価格で並び替え</option>
-                    <option value="high"<?= $sort === 'high' ? 'selected' : ''?>>高い順に表示</option>
-                    <option value="low" <?= $sort === 'low' ? 'selected' : ''?>>低い順に表示</option>
+                    <option value="high"{{ ($sort ?? '') === 'high' ? 'selected' : ''}}>高い順に表示</option>
+                    <option value="low"{{($sort ?? '') === 'low' ? 'selected' : ''}}>低い順に表示</option>
                 </select>
                 
                 </form>

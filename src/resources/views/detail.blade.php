@@ -19,12 +19,13 @@
         <div class="wrapper">
             <div class="top-content">
                 <div class="left">
-                    <p>商品一覧 > {{ $product->name}}
+                    <p>
+                        <a href="/products" class="link">商品一覧</a><span>></span>{{ $product->name}}
                     </p>
                 <form action="{{ route('products.update', $product->id) }}" class="" method="post" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
-                    <div    class="item-img">
+                    <div class="item-img">
                         <img src="{{ Storage::url('images/' . $product->image) }}"alt="" class="image">
                         {{--<img src="{{ asset('storage/images/' . $product->image) }}
                     " alt="" class="image">--}}
@@ -84,7 +85,9 @@
                 <form action="{{ route('products.delete', $product->id) }}" method="post" >
                     @method('DELETE')
                     @csrf
-                    <button class="delete-btn">削除</button>
+                    <button class="delete-btn">
+                        <img src="{{ asset('images/Frame 406.png')}}" alt="" class="">
+                    </button>
                 </form>
                 
             </div>

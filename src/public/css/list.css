@@ -190,12 +190,6 @@ a {
     display: flex;
     justify-content: center;
     list-style: none;
-    /*position: absolute;
-    
-    top: 100px;
-    left: 0;
-    right: 0;
-    */
     margin: 20px;
 }
 .pagination li:not(.active) {
@@ -213,8 +207,8 @@ a {
 }
 .active {
     padding: 4px 12px;
-    border:  1px solid #8B7969;
-    background-color: #8B7969;
+    border:  1px solid yellow;
+    background-color: orange;
     color: #fff;
 }
 
