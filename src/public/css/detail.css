@@ -22,7 +22,7 @@ a {
     max-width: 900px;
     height: 900px;
     margin: 80px auto 0;
-    /* background-color: #fff; */
+    
 }
 .top-content {
     display: flex;
@@ -64,10 +64,7 @@ textarea {
 }
 .btns {
     display: flex;
-/* justify-content: center; */
     position: relative;
-    /* gap: 20px; */
-    
 }
 .delete-btn {
    
@@ -91,10 +88,8 @@ textarea {
     left: 200px;
     display: block;
     background-color: #e0dfde;
-    
     line-height: 50px;
-    /* right: 0; */
-}
+ } 
 .update-btn {
     position: absolute;
     left: 480px;
@@ -107,7 +102,7 @@ textarea {
     margin-bottom: 15px;
 }
 .radio-btn {
-    /* margin-right: 15px; */
+    
     display: block;
     margin-bottom: 10px;
 }

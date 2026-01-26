@@ -1,5 +1,5 @@
 body {
-    background-color: blanchedalmond;
+    background-color: #f8f8f8;
 }
 #header {
     background-color: #fff;
@@ -14,7 +14,11 @@ body {
 .wrapper {
     max-width: 900px;
     margin: 80px auto;
-    /* background-color: #fff; */
+    
+}
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
 }
 .tab {
     display: block;
@@ -25,32 +29,18 @@ body {
     width: 900px;
     height: 50px;
     border: 1px solid #ccc;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 20px;
 }
 .img {
     display: block;
-    margin-bottom: 40px;
+    margin-bottom:30px ;
 }
 .selectable {
     color: red;
     
 }
-/*.radio-btn {
-    margin-bottom: 20px;
-    display: flex;
-}
-.radio {
-    margin-bottom: 40px;
-}
-.radio-inputs {
-    margin-left: 30px;
-    display: inline-block;
-}
-.radio-inputs:first-child {
-    margin-left: 0;
-}
-    */
+
 textarea {
     width: 900px;
     border:1px solid #ccc;
@@ -58,32 +48,37 @@ textarea {
     margin-bottom: 30px;
     padding: 20px;
 }
+.back-btn,
+.register-btn {
+    width: 250px;
+    height: 50px;
+    color: #4b4b4b;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
 .btns {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    
-    
+    gap: 20px;
 }
 .back-btn
- {
-    padding: 10px 30px;
-    background-color: grey;
-
-    /* position: absolute; */
-    /* left: 300px; */
-    /* right: 0; */
+ {  
+    text-align: center;
+    display: block;
+    background-color: #e0dfde;
+    line-height: 50px;
 }
 .register-btn {
-    /* position: absolute; */
-    /* left: 500px; */
-    padding: 10px 30px;
-    background-color: gold;
+    background-color: #f5c800;
+    
 }
 .require {
     background-color: red;
     color: #fff;
-    margin: 0 10px;
+    margin: 0 3px;
+    font-size: 0.75rem;
 }
 .radio-btn {
     margin-right: 15px;
@@ -91,12 +86,12 @@ textarea {
     margin-bottom: 15px;
 }
 .seasons-label {
-    /* margin-right: 20px; */
+    
     display: inline-block;
     margin-bottom: 25px;
 }
 .season-text {
-     margin-right: 30px;
+     margin-right: 50px;
     display: inline-block;
 }
 a {
